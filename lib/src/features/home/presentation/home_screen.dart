@@ -22,7 +22,7 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     // TODO: 2. Alle Transaktionen vom MockDB holen und in einer Variable speichern
-
+    List<Transaction> transactions = db.getAllTransactions();
     return Scaffold(
       appBar: AppBar(
         title: const Text("Kontoübersicht"),
@@ -37,7 +37,7 @@ class _HomeScreenState extends State<HomeScreen> {
               Text(
                 currencyFormat.format(
                   // TODO: 3. aktuelles Guthaben anzeigen lassen aus MockDB
-                  12.4566,
+                  db.getTotalAmount(),
                 ),
                 style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25),
               ),
@@ -52,18 +52,21 @@ class _HomeScreenState extends State<HomeScreen> {
                   itemCount: db.getAllTransactions().length,
                   itemBuilder: (context, index) {
                     // TODO: 4. Hilfsvariable verwenden, die jeweils einen Wer der MockDB repräsentiert, Tipp: Schritt 2 ansehen & transactions[index]
+                    final transaction = transactions[index];
                     return ListTile(
                       // TODO: 5. Beschreibung der Transaktion einbauen:
-                      title: Text("Beschreibung der Transaktion"),
+                      title: Text(transaction.description),
                       trailing: Text(
                         currencyFormat.format(
                           // TODO: 5. Transaktions-Summe anzeigen lassen
-                          15.00,
+                          transaction.amount,
                         ),
                         style: TextStyle(
                           color:
                               // TODO: 6. Bonus! Wenn die Summe negativ ist, soll sie Rot sein, wenn sie positiv ist soll sie grün sein
-                              Colors.red,
+                              (transaction.amount > 0)
+                                  ? Colors.green
+                                  : Colors.red,
                         ),
                       ),
                     );
