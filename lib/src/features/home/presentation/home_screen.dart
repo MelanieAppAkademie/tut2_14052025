@@ -36,7 +36,7 @@ class _HomeScreenState extends State<HomeScreen> {
               const Text("aktuelles Guthaben"),
               Text(
                 currencyFormat.format(
-                  // TODO: aktuelles Guthaben anzeigen lassen aus MockDB
+                  // TODO: 3. aktuelles Guthaben anzeigen lassen aus MockDB
                   12.4566,
                 ),
                 style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25),
@@ -51,18 +51,18 @@ class _HomeScreenState extends State<HomeScreen> {
                 child: ListView.builder(
                   itemCount: db.getAllTransactions().length,
                   itemBuilder: (context, index) {
-                    // TODO: Hilfsvariable verwenden, die jeweils einen Wer der MockDB repräsentiert, Tipp: Schritt 2 ansehen & transactions[index]
+                    // TODO: 4. Hilfsvariable verwenden, die jeweils einen Wer der MockDB repräsentiert, Tipp: Schritt 2 ansehen & transactions[index]
                     return ListTile(
-                      // TODO: Beschreibung der Transaktion einbauen:
+                      // TODO: 5. Beschreibung der Transaktion einbauen:
                       title: Text("Beschreibung der Transaktion"),
                       trailing: Text(
                         currencyFormat.format(
-                          // TODO: Transaktions-Summe anzeigen lassen
+                          // TODO: 5. Transaktions-Summe anzeigen lassen
                           15.00,
                         ),
                         style: TextStyle(
                           color:
-                              // TODO: Bonus! Wenn die Summe negativ ist, soll sie Rot sein, wenn sie positiv ist soll sie grün sein
+                              // TODO: 6. Bonus! Wenn die Summe negativ ist, soll sie Rot sein, wenn sie positiv ist soll sie grün sein
                               Colors.red,
                         ),
                       ),
