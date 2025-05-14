@@ -26,7 +26,7 @@ Zeige die Beschreibung (description) jeder Transaktion in der title-Eigenschaft 
 
 Zeige die Summe (amount) jeder Transaktion in der trailing-Eigenschaft des ListTile-Widgets an. Formatiere den Betrag mit deutscher Währungsformatierung (de_DE).
 
-## 7. Bonus: Farbe der Transaktions-Summe anpassen
+## 6. Bonus: Farbe der Transaktions-Summe anpassen
 
 Wenn die Transaktions-Summe negativ ist, soll die Schriftfarbe rot sein.
 Wenn die Transaktions-Summe positiv ist, soll die Schriftfarbe grün sein.
